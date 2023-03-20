@@ -1,0 +1,25 @@
+{
+  "name": "slip-ts",
+  "version": "1.0.0",
+  "description": "Typescript (and JavaScript) SLIP encoder/decoder",
+  "main": "build/slip.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansSchall/slip-ts.git"
+  },
+  "keywords": [
+    "SLIP",
+    "typescript",
+    "serial",
+    "framing"
+  ],
+  "author": "hansSchall",
+  "license": "LGPL-2.1",
+  "bugs": {
+    "url": "https://github.com/hansSchall/slip-ts/issues"
+  },
+  "homepage": "https://github.com/hansSchall/slip-ts#readme"
+}
