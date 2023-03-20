@@ -1,6 +1,6 @@
 {
   "name": "slip-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typescript (and JavaScript) SLIP encoder/decoder",
   "main": "build/slip.js",
   "scripts": {
