@@ -80,6 +80,7 @@ function* g_decodeSLIP() {
                 else if (char === SLIP.ESC_END) {
                     push(SLIP.END);
                 }
+                escape = false;
             }
             else {
                 if (char === SLIP.ESC) {

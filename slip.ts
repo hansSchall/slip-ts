@@ -56,10 +56,10 @@ export function encodeSLIP(data: Uint8Array) {
 function mergeBuffers(buf1: Uint8Array, buf2: Uint8Array): Uint8Array {
 
     if (buf1.length == 0)
-        return buf2
+        return buf2;
 
     if (buf2.length == 0)
-        return buf1
+        return buf1;
 
     const res = new Uint8Array(buf1.length + buf2.length);
 
@@ -98,6 +98,7 @@ function* g_decodeSLIP(): Generator<Uint8Array, never, Uint8Array> {
                 } else if (char === SLIP.ESC_END) {
                     push(SLIP.END);
                 }
+                escape = false;
             } else {
                 if (char === SLIP.ESC) {
                     escape = true;
@@ -161,5 +162,5 @@ export function decodeSLIP(cb: (data: Uint8Array) => void) {
                     break;
             }
         }
-    }
+    };
 }
