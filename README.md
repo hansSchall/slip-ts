@@ -5,7 +5,9 @@ Typescript (and JavaScript) SLIP encoder/decoder
 SLIP: https://en.wikipedia.org/wiki/Serial_Line_Internet_Protocol
 
 Inspired by https://github.com/colinbdclark/slip.js, rewritten in TypeScript and
-enhanced to support AsyncIterators
+enhanced to support AsyncIterators.
+
+Staring with version 1.1.0 a newer and faster implementation is used.
 
 ## Installation
 
@@ -26,7 +28,7 @@ import {
 ### Web
 
 `slip-ts` should also work in browser, not tested. Install ist using npm, yarn
-or copy the source files
+or copy `slip.ts` or `build/slip.js`
 
 ## Usage
 
@@ -35,9 +37,9 @@ or copy the source files
 ```ts
 import { encodeSLIP } from "slip-ts";
 
-const data: UInt8Array = ...;
+const data: Uint8Array = ...;
 
-const encoded: UInt8Array = encodeSLIP(data);
+const encoded: Uint8Array = encodeSLIP(data);
 ```
 
 ### Decoding Option 1 - Preferred - using AsyncIterators
@@ -47,8 +49,8 @@ import { asyncDecodeSLIP } from "slip-ts";
 
 const input: AsyncIterable<Uint8Array> = ...;
 
-for await (const decoded: UInt8Array of asyncDecodeSLIP(input)) {
-    // decoded is a UInt8Array containing a decoded data frame
+for await (const decoded: Uint8Array of asyncDecodeSLIP(input)) {
+    // decoded is a Uint8Array containing a decoded data frame
 }
 ```
 
@@ -57,8 +59,8 @@ for await (const decoded: UInt8Array of asyncDecodeSLIP(input)) {
 ```ts
 import { decodeSLIP } from "slip-ts";
 
-const decoder = decodeSLIP((decoded: UInt8Array) => {
-  // decoded is a UInt8Array containing a decoded data frame
+const decoder = decodeSLIP((decoded: Uint8Array) => {
+  // decoded is a Uint8Array containing a decoded data frame
 });
 
 yourDataSource.on("data", (data: UInt8array) => {
@@ -68,8 +70,8 @@ yourDataSource.on("data", (data: UInt8array) => {
 
 ## Contributing
 
-Feel free to create an issue to report a bug, contribute fixes, unit tests,
-etc.!
+Feel free to create an issue to report a bug, contribute fixes, more unit tests
+or performance improvements!
 
 ## License
 

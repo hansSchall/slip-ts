@@ -1,10 +1,11 @@
 {
   "name": "slip-ts",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Typescript (and JavaScript) SLIP encoder/decoder",
   "main": "build/slip.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "deno check slip.ts && deno test",
+    "build": "deno check slip.ts && tsc"
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,7 @@
     "SLIP",
     "typescript",
     "serial",
-    "framing"
+    "packet"
   ],
   "author": "hansSchall",
   "license": "LGPL-2.1",
