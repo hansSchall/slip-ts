@@ -29,6 +29,13 @@ export enum SLIP {
 }
 
 export function encodeSLIP(data: Uint8Array) {
+    if (data.indexOf(SLIP.END) === -1 && data.indexOf(SLIP.ESC) === -1) { // nothing to escape
+        const res = new Uint8Array(data.length + 1);
+        res.set(data);
+        res[data.length] = SLIP.END;
+        return res;
+    }
+
     const result = new Uint8Array(data.length * 2 + 1);
     let pos = 0;
     function push(data: number) {
@@ -72,6 +79,9 @@ function shiftPacket(data: Uint8Array): Uint8Array[] {
 }
 
 function unescape(packet: Uint8Array): Uint8Array {
+    if (packet.indexOf(SLIP.ESC) === -1)
+        return packet; // nothing to escape
+
     const result = new Uint8Array(packet.length);
     let pos = 0;
     function push(data: number) {
