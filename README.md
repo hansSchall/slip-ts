@@ -7,7 +7,9 @@ SLIP: https://en.wikipedia.org/wiki/Serial_Line_Internet_Protocol
 Inspired by https://github.com/colinbdclark/slip.js, rewritten in TypeScript and
 enhanced to support AsyncIterators.
 
-Starting with version 1.1.0 a newer and faster implementation is used.
+# [!!! This has been moved to JSR: ![JSR](https://jsr.io/badges/@deno-plc/slip) !!!](https://jsr.io/@deno-plc/slip)
+
+All new releases will be published there. This version will not be updated.
 
 ## Installation
 

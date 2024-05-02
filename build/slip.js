@@ -28,7 +28,7 @@ var SLIP;
     SLIP[SLIP["ESC"] = 219] = "ESC";
     SLIP[SLIP["ESC_END"] = 220] = "ESC_END";
     SLIP[SLIP["ESC_ESC"] = 221] = "ESC_ESC";
-})(SLIP = exports.SLIP || (exports.SLIP = {}));
+})(SLIP || (exports.SLIP = SLIP = {}));
 function encodeSLIP(data) {
     if (data.indexOf(SLIP.END) === -1 && data.indexOf(SLIP.ESC) === -1) { // nothing to escape
         const res = new Uint8Array(data.length + 1);
